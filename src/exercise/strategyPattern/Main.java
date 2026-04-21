@@ -5,9 +5,11 @@ public class Main {
         User Thanh = new User("clown lord", "Thanh", "ClownLord@gmail.com");
 
         XMLStorage xmlStorage = new XMLStorage();
-        xmlStorage.store(Thanh);
+        UserController userController1 = new UserController(xmlStorage);
+        userController1.store(Thanh);
 
         MySQLStorage mySQLStorage = new MySQLStorage();
-        mySQLStorage.store(Thanh);
+        UserController userController2 = new UserController(mySQLStorage);
+        userController2.store(Thanh);
     }
 }
